@@ -1,0 +1,40 @@
+---
+import Layout from "../../components/layout.astro"
+import imgPost from "../../img/images.jpg"
+
+const posts = await Astro.glob('./post/*.md')
+console.log(posts.map(post =>post.url))
+---
+
+<Layout pageTitle="Blog del Curso Astro">
+    <h1>Blog</h1>
+    <p>bienbenidos al Blog</p>
+    
+    <hr>
+    <img width="330" height="330" src="https://cdn0.ecologiaverde.com/es/posts/5/5/0/diferencia_entre_lago_y_laguna_1055_orig.jpg" alt="imagen">
+    <br>
+    
+    <img width="330" height="330" src="/public/img.avif" alt="imagen2">
+
+    <br>
+    <img width="330" height="330"  src= {imgPost.src} alt="images.jpg">
+
+    <br>
+    {
+        posts.map(post =>{
+            return <a href= {post.url}  class="link">{post.frontmatter.title}</a> <br> <br>
+        })
+    }
+    <style>
+        .link {
+            background: wheat;
+            color:black;
+            text-decoration: none;
+            display: flex;
+            margin-botton: 4px;
+        }
+        
+    </style>
+    
+    
+</Layout>

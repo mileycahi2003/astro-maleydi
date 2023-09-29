@@ -1,0 +1,33 @@
+---
+interface Prosp{
+    title?:string
+    content?: string
+}
+
+const {title ="Titulo Predefinido", content ="Contenido Predefinido"} = Astro.props
+
+
+---
+
+
+
+<div class="card">
+
+    <h1> {title}</h1>
+    <p> {content} </p>
+</div>
+
+<style>
+    body{
+        background-color: #e6abec;
+    }
+    .card{
+        background: #8ba0d5a9;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgb(25, 18, 18), 0 25px 58px 0 rgba(0, 0, 0.1);
+        padding: 20px;
+        width: 300px;
+        margin-bottom: 5px;
+    }
+</style>
+      
